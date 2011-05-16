@@ -32,6 +32,6 @@ Messages<br/>
 </c:forEach>
 </table>
 
-<br/><a href="addmsg.jsp">New message</a>
+<br/><a href="/addmsg.jsp">New message</a>
 </body>
 </html>

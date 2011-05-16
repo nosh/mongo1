@@ -52,7 +52,7 @@ public class AddMessageActionBean implements ActionBean {
     		return null;
     	}
        
-        return new ForwardResolution("MessageList.action");
+        return new ForwardResolution("/messages");
     }
     
 

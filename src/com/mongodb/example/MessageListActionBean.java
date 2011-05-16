@@ -8,6 +8,7 @@ import net.sourceforge.stripes.action.ActionBeanContext;
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.ForwardResolution;
 import net.sourceforge.stripes.action.Resolution;
+import net.sourceforge.stripes.action.UrlBinding;
 
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
@@ -16,6 +17,7 @@ import com.mongodb.DBObject;
 import com.mongodb.Mongo;
 import com.mongodb.MongoURI;
 
+@UrlBinding("/messages")
 public class MessageListActionBean implements ActionBean {
 	
 	private ActionBeanContext context;
