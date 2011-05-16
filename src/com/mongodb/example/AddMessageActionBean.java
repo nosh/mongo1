@@ -4,7 +4,9 @@ import net.sourceforge.stripes.action.ActionBean;
 import net.sourceforge.stripes.action.ActionBeanContext;
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.ForwardResolution;
+import net.sourceforge.stripes.action.RedirectResolution;
 import net.sourceforge.stripes.action.Resolution;
+import net.sourceforge.stripes.action.UrlBinding;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
@@ -13,7 +15,7 @@ import com.mongodb.Mongo;
 import com.mongodb.MongoURI;
 import com.mongodb.WriteConcern;
 
-
+@UrlBinding("/add")
 public class AddMessageActionBean implements ActionBean {
     private ActionBeanContext context;
     private String author;
@@ -30,6 +32,10 @@ public class AddMessageActionBean implements ActionBean {
 
    
     @DefaultHandler
+    public Resolution loadPage() {
+    	return new ForwardResolution("/addmsg.jsp");
+    }
+    
     public Resolution addMsg() {
     	
     	try {
@@ -52,7 +58,7 @@ public class AddMessageActionBean implements ActionBean {
     		return null;
     	}
        
-        return new ForwardResolution("/messages");
+        return new RedirectResolution("/messages");
     }
     
 

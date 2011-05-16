@@ -18,20 +18,20 @@ response.setDateHeader ("Expires", 0); //prevents caching at the proxy server
 <head>
 <link href="css/basic.css" media="screen" rel="stylesheet" type="text/css" /> 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>MongoDB Sample Application</title>
 </head>
 <body>
-Messages<br/>
+<h2>MongoDB Messages</h2>
 
 
 <table>
 <c:forEach items="${actionBean.msgs}" var="msg" varStatus="loop">
 <tr>
-<td>${loop.index}. ${msg['msg']}<br/></td><td>delete</td>
+<td>${loop.index}. ${msg['msg']}<br/></td><td><a href="/mongo1/delete/${msg['_id']}">delete</a></td>
 </tr>
 </c:forEach>
 </table>
 
-<br/><a href="/addmsg.jsp">New message</a>
+<br/><a href="/mongo1/add">New message</a>
 </body>
 </html>
