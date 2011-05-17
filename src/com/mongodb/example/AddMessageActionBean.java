@@ -41,7 +41,7 @@ public class AddMessageActionBean implements ActionBean {
     	try {
     		Mongo m = MongoHolder.MONGOS.connect(new MongoURI("mongodb://localhost"));
     		
-    		DB db = m.getDB("msgs");
+    		DB db = m.getDB("msgsdb");
     		DBCollection coll = db.getCollection("msgs");
     		coll.setWriteConcern(WriteConcern.SAFE);
     		

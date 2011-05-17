@@ -43,7 +43,7 @@ public class MessageListActionBean implements ActionBean {
 			try {
 	    		
 				Mongo m = MongoHolder.MONGOS.connect(new MongoURI("mongodb://localhost"));
-	    		DB db = m.getDB("msgs");
+	    		DB db = m.getDB("msgsdb");
 	    		DBCollection coll = db.getCollection("msgs");
 	    		DBCursor cursor = coll.find();
 	    		System.out.println("Cursor count:"+cursor.count());
