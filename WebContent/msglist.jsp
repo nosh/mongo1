@@ -27,11 +27,12 @@ response.setDateHeader ("Expires", 0); //prevents caching at the proxy server
 <table>
 <c:forEach items="${actionBean.msgs}" var="msg" varStatus="loop">
 <tr>
-<td>${loop.index}. ${msg['msg']}<br/></td><td><a href="/mongo1/delete/${msg['_id']}">delete</a></td>
+<td>${loop.index}. ${msg['msg']}<br/></td><td><a href="/delete/${msg['_id']}">delete</a></td>
 </tr>
-</c:forEach>
+</c:forEach>  
 </table>
 
-<br/><a href="/mongo1/add">New message</a>
+<br/><a href="/add">New message</a>
+
 </body>
 </html>
